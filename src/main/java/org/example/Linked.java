@@ -25,9 +25,9 @@ public class Linked{
         Linked l1=new Linked();
         Scanner sc=new Scanner(System.in);
 
-        int ch;
+        int ch=0;
       
-        while(true)
+        while(ch!=10)
         {
            log.info("1.Add Contact at last");
            log.info("2.Add Contact at First");
@@ -41,73 +41,52 @@ public class Linked{
            log.info("10.Exit");
            log.info("Enter the choice");
             ch=sc.nextInt();
-            if(ch==1)
-            {
-                data1= l1.getdata();
-                Person p1=new Person(data1[0],data1[1],data1[2]);
-                l.addNode(p1);
-            }
-            else if(ch==2)
-            {
-                data1= l1.getdata();
-                Person p1=new Person(data1[0],data1[1],data1[2]);
-                l.addNodeFirst(p1);
-            }
-            else if(ch==3)
-            {
-                l.deleteNodeLast();
-            }
-            else if(ch==4)
-            {
-                l.deleteNodeFirst();
-            }
-            else if(ch==5)
-            {
-               log.info("Enter the position");
-                int pos=sc.nextInt();
-                data1= l1.getdata();
-                Person p1=new Person(data1[0],data1[1],data1[2]);
-                l.addNodePos(p1,pos);
-            }
-            else if(ch==6)
-            {
-               log.info("Enter the position");
-                int pos=sc.nextInt();
-                l.deleteNodePos(pos);
-            }
-            else if(ch==7)
-            {
-               log.info("Enter the number for searching");
-                String num=sc.next();
-                int res=l.searchbyNumber(num);
-                if(res>0)
-                {
-                   log.info("The contact is found at the position of");
-                    log.log(Level.INFO,()->""+ res);                }
-                else if(res==0)
-                {
-                   log.info("The list is empty");
+            switch (ch) {
+
+
+                case 1:{
+                    data1 = l1.getdata();
+                    Person p1 = new Person(data1[0], data1[1], data1[2]);
+                    l.addNode(p1);break;
+                } case 2: {
+                    data1 = l1.getdata();
+                    Person p1 = new Person(data1[0], data1[1], data1[2]);
+                    l.addNodeFirst(p1);break;
+                } case 3: {
+                    l.deleteNodeLast();break;
+                } case 4: {
+                    l.deleteNodeFirst();break;
+                }case 5: {
+                    log.info("Enter the position");
+                    int pos = sc.nextInt();
+                    data1 = l1.getdata();
+                    Person p1 = new Person(data1[0], data1[1], data1[2]);
+                    l.addNodePos(p1, pos);break;
+                } case 6: {
+                    log.info("Enter the position");
+                    int pos = sc.nextInt();
+                    l.deleteNodePos(pos);break;
+                } case 7: {
+                    log.info("Enter the number for searching");
+                    String num = sc.next();
+                    int res = l.searchbyNumber(num);
+                    if (res > 0) {
+                        log.info("The contact is found at the position of");
+                        log.log(Level.INFO, () -> "" + res);
+                    } else if (res == 0) {
+                        log.info("The list is empty");
+                    } else if (res == -1) {
+                        log.info("The contact is not presented in the Linked list");
+                    }break;
+                } case 8: {
+                    l.display();break;
+                } case 9: {
+                    l.displayCount();
+                    break;
+                } default: {
+                    log.info("Enter valid choice");
+                    break;
                 }
-                else if(res==-1)
-                {
-                   log.info("The contact is not presented in the Linked list");
-                }
-            }
-            else if(ch==8)
-            {
-                l.display();
-            }
-            else if(ch==9)
-            {
-                l.displayCount();
-            }
-            else if(ch==10)
-            {
-                break;
-            }
-            else
-            {
-               log.info("Enter valid choice");
             }
         }
 
@@ -196,8 +175,9 @@ class LinkedList
             a1.nextnode=temp;
             prev.nextnode=a1;
             count++;
-           log.info("Node inserted at Position"+pos);
-            log.log(Level.INFO,()->""+pos);        }
+           log.info("Node inserted at Position");
+            log.log(Level.INFO,()->""+pos);
+        }
     }
     public void deleteNodePos(int pos)
     {
