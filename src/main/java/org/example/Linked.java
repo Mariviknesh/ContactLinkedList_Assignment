@@ -9,7 +9,8 @@ public class Linked{
 
         String [] data=new String[3];
         Scanner sc=new Scanner(System.in);
-        Logger log=Logger.getLogger("com.api.jar");
+        String com="com.api.jar";
+        Logger log=Logger.getLogger(com);
        log.info("Enter Name:");
         data[0]=sc.next();
        log.info("Enter Email:");
@@ -20,7 +21,8 @@ public class Linked{
     }
     public static void main(String[] args) {
         String []data1;
-        Logger log=Logger.getLogger("com.api.jar");
+        String com="com.api.jar";
+        Logger log=Logger.getLogger(com);
         LinkedList l=new LinkedList();
         Linked l1=new Linked();
         Scanner sc=new Scanner(System.in);
@@ -106,7 +108,8 @@ class Person
     }
     void display()
     {
-        Logger log=Logger.getLogger("com.api.jar");
+        String com="com.api.jar";
+        Logger log=Logger.getLogger(com);
        log.info("Name=");
         log.info(this.name);
        log.info("Number=");
@@ -132,7 +135,8 @@ class LinkedList
     Node temp;
     Node prev;
     int count;
-    Logger log=Logger.getLogger("com.api.jar");
+    String com="com.api.jar";
+    Logger log=Logger.getLogger(com);
     LinkedList()
     {
         this.root=null;
