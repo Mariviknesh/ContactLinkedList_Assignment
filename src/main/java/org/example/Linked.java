@@ -6,7 +6,7 @@ public class Linked{
     public String [] getdata()
     {
 
-        String data[]=new String[3];
+        String [] data=new String[3];
         Scanner sc=new Scanner(System.in);
         Logger log=Logger.getLogger("com.api.jar");
        log.info("Enter Name:");
@@ -18,7 +18,7 @@ public class Linked{
         return data;
     }
     public static void main(String[] args) {
-        String data1[];
+        String []data1;
         Logger log=Logger.getLogger("com.api.jar");
         LinkedList l=new LinkedList();
         Linked l1=new Linked();
@@ -82,7 +82,7 @@ public class Linked{
                 if(res>0)
                 {
                    log.info("The contact is found at the position of");
-                   log.info(String.valueOf(res));
+                   log.info(""+res);
                 }
                 else if(res==0)
                 {
@@ -125,12 +125,15 @@ class Person
         this.num=num;
         this.email=email;
     }
-    void Display()
+    void display()
     {
         Logger log=Logger.getLogger("com.api.jar");
-       log.info("Name="+this.name);
-       log.info("Number="+this.num);
-       log.info("Email="+this.email);
+       log.info("Name=");
+        log.info(this.name);
+       log.info("Number=");
+        log.info(this.num);
+       log.info("Email=");
+        log.info(this.email);
        log.info("");
     }
 }
@@ -194,7 +197,7 @@ class LinkedList
             prev.nextnode=a1;
             count++;
            log.info("Node inserted at Position"+pos);
-           log.info(String.valueOf(pos));
+            log.info(""+pos);
         }
     }
     public void deleteNodePos(int pos)
@@ -224,7 +227,7 @@ class LinkedList
             }
             count--;
            log.info("Node deleted at position");
-           log.info(String.valueOf(pos));
+           log.info(""+pos);
         }
     }
     public void addNode(Person a)
@@ -274,7 +277,7 @@ class LinkedList
         temp=this.root;
         if(temp==null)
         {
-            //System.out.println("Empty list");
+
             return 0;
         }
         else
@@ -296,7 +299,7 @@ class LinkedList
     public void displayCount()
     {
        log.info("Number of Nodes=");
-       log.info(String.valueOf(this.count));
+       log.info(""+this.count);
     }
     public void display()
     {
@@ -311,8 +314,9 @@ class LinkedList
             while(temp!=null)
             {
                log.info("Node"+cnt);
+                log.info(""+cnt);
                log.info(String.valueOf(cnt));
-                temp.p.Display();
+                temp.p.display();
                 temp=temp.nextnode;
                 cnt++;
             }
