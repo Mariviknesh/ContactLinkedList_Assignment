@@ -3,13 +3,13 @@ import java.util.Scanner;
 import java.util.logging.Logger;
 import java.util.logging.Level;
 public class Linked{
-    private static final String com="com.api.jar";
+    private static final String COM="com.api.jar";
     public String [] getdata()
     {
 
         String [] data=new String[3];
         Scanner sc=new Scanner(System.in);
-        Logger log=Logger.getLogger(com);
+        Logger log=Logger.getLogger(COM);
        log.info("Enter Name:");
         data[0]=sc.next();
        log.info("Enter Email:");
@@ -20,8 +20,8 @@ public class Linked{
     }
     public static void main(String[] args) {
         String []data1;
-        String com="com.api.jar";
-        Logger log=Logger.getLogger(com);
+
+        Logger log=Logger.getLogger(COM);
         LinkedList l=new LinkedList();
         Linked l1=new Linked();
         Scanner sc=new Scanner(System.in);
@@ -96,7 +96,7 @@ public class Linked{
 }
 class Person
 {
-    private static final String com="com.api.jar";
+    private static final String COM="com.api.jar";
 
     String name;
     String email;
@@ -109,7 +109,7 @@ class Person
     }
     void display()
     {
-        Logger log=Logger.getLogger(com);
+        Logger log=Logger.getLogger(COM);
        log.info("Name=");
         log.info(this.name);
        log.info("Number=");
@@ -135,8 +135,8 @@ class LinkedList
     Node temp;
     Node prev;
     int count;
-    private static final String com="com.api.jar";
-    Logger log=Logger.getLogger(com);
+    private static final String COM="com.api.jar";
+    Logger log=Logger.getLogger(COM);
     LinkedList()
     {
         this.root=null;
