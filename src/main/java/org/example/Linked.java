@@ -1,6 +1,7 @@
 package org.example;
 import java.util.Scanner;
 import java.util.logging.Logger;
+import java.util.logging.Level;
 
 public class Linked{
     public String [] getdata()
@@ -82,8 +83,7 @@ public class Linked{
                 if(res>0)
                 {
                    log.info("The contact is found at the position of");
-                   log.info(""+res);
-                }
+                    log.log(Level.INFO,()->""+ res);                }
                 else if(res==0)
                 {
                    log.info("The list is empty");
@@ -197,8 +197,7 @@ class LinkedList
             prev.nextnode=a1;
             count++;
            log.info("Node inserted at Position"+pos);
-            log.info(""+pos);
-        }
+            log.log(Level.INFO,()->""+pos);        }
     }
     public void deleteNodePos(int pos)
     {
@@ -227,7 +226,7 @@ class LinkedList
             }
             count--;
            log.info("Node deleted at position");
-           log.info(""+pos);
+            log.log(Level.INFO,()->""+ pos);
         }
     }
     public void addNode(Person a)
@@ -299,7 +298,7 @@ class LinkedList
     public void displayCount()
     {
        log.info("Number of Nodes=");
-       log.info(""+this.count);
+        log.log(Level.INFO,()->""+ this.count);
     }
     public void display()
     {
@@ -313,9 +312,10 @@ class LinkedList
         {
             while(temp!=null)
             {
-               log.info("Node"+cnt);
-                log.info(""+cnt);
-               log.info(String.valueOf(cnt));
+               log.info("Node");
+
+                int finalCnt1 = cnt;
+                log.log(Level.INFO,()->""+ finalCnt1);
                 temp.p.display();
                 temp=temp.nextnode;
                 cnt++;
