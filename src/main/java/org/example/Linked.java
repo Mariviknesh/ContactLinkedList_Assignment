@@ -2,14 +2,13 @@ package org.example;
 import java.util.Scanner;
 import java.util.logging.Logger;
 import java.util.logging.Level;
-
 public class Linked{
+    private static final String com="com.api.jar";
     public String [] getdata()
     {
 
         String [] data=new String[3];
         Scanner sc=new Scanner(System.in);
-        String com="com.api.jar";
         Logger log=Logger.getLogger(com);
        log.info("Enter Name:");
         data[0]=sc.next();
@@ -97,6 +96,8 @@ public class Linked{
 }
 class Person
 {
+    private static final String com="com.api.jar";
+
     String name;
     String email;
     String num;
@@ -108,7 +109,6 @@ class Person
     }
     void display()
     {
-        String com="com.api.jar";
         Logger log=Logger.getLogger(com);
        log.info("Name=");
         log.info(this.name);
@@ -135,7 +135,7 @@ class LinkedList
     Node temp;
     Node prev;
     int count;
-    String com="com.api.jar";
+    private static final String com="com.api.jar";
     Logger log=Logger.getLogger(com);
     LinkedList()
     {
